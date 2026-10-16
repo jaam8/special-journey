@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> CarmondaNews — новости в одном месте</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="brand">
+                    <span class="brand-mark">CN</span>
+                    <span class="brand-name">CarmondaNews</span>
+                </div>
+
+                <form id="searchForm" class="search-form" autocomplete="off">
+                    <input
+                        id="searchInput"
+                        class="search-input"
+                        type="text"
+                        placeholder="Поиск новостей..."
+                        minlength="2"
+                        required
+                    />
+                    <button type="submit" id="searchBtn" class="btn btn-primary">
+                        Искать
+                    </button>
+                </form>
+            </div>
+        </header>
+
+        <main class="container">
+            <nav class="tabs" role="tablist">
+                <button class="tab is-active" data-tab="search" role="tab" aria-selected="true">
+                    Результаты
+                </button>
+                <button class="tab" data-tab="saved" role="tab" aria-selected="false">
+                    Избранное <span id="savedCount" class="badge">0</span>
+                </button>
+            </nav>
+
+            <section id="searchPanel" class="panel" data-panel="search">
+                <div id="searchStatus" class="status"></div>
+                <div id="newsContainer" class="grid"></div>
+            </section>
+
+            <section id="savedPanel" class="panel is-hidden" data-panel="saved">
+                <div id="savedStatus" class="status"></div>
+                <div id="savedContainer" class="grid"></div>
+            </section>
+        </main>
+
+        <div id="toast" class="toast"></div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
